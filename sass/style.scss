@@ -1,0 +1,741 @@
+// colors
+$colorDark: #242A42;
+$colorWhite: #fff;
+$colorGreen: #0FBE43;
+$colorGrey: #f8f7f7;
+
+// fonts
+@font-face {
+    font-family: RobotoBold;
+    src: url("../fonts/Roboto-Bold.ttf");
+    font-weight: 900;
+}
+@font-face {
+    font-family: ComfortaBold;
+    src: url("../fonts/Comfortaa-Bold.ttf");
+    font-weight: 700;
+}
+@font-face {
+    font-family: ComfortaMedium;
+    src: url("../fonts/Comfortaa-Medium.ttf");
+    font-weight: 500;
+}
+@font-face {
+    font-family: ComfortaRegular;
+    src: url("../fonts/Comfortaa-Regular.ttf");
+    font-weight: 400;
+}
+
+@keyframes lang-animation {
+    from {
+        top: 150%;
+    }
+    to {
+        top: 100%;
+    }
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+/* SCROLLBAR for window*/
+::-webkit-scrollbar{
+    width: 9px!important;
+}
+::-webkit-scrollbar-thumb{
+    background-color: $colorGreen;
+    border-radius: 50px;
+}
+::-webkit-scrollbar-track{
+    background-color: $colorDark;
+  
+}
+
+
+body{
+    background: linear-gradient(90deg, $colorDark 50%, transparent 50%);
+    position: relative;
+  
+
+    // todo: Header section
+    header{
+        font-family: ComfortaBold;
+        background: linear-gradient(90deg, $colorWhite 50%, $colorDark 50%);
+        border: 1px solid $colorGreen;
+        border-top: none;
+        border-radius: 0 0 30px 0;
+        
+
+        // logo
+        .site-logo {
+            padding: 0;
+            a{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5px 0;
+            border-right: 1px dotted $colorGreen;
+
+            img{
+                width: 70%;
+            }
+        }}
+
+        // menu
+        .main-navbar{
+            height: 100%;
+            // border: 1px solid;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .main-navbar__items{
+                width: 100%;
+                // border: 1px solid;
+                margin: 0;
+                display: flex;
+                justify-content: space-between;
+                list-style: none;
+                color: $colorGreen;
+
+                .main-navbar__item {
+                    border-bottom: 2px solid transparent;
+                    transition: all 0.4s ease-in-out;
+
+                    a{
+                        color: $colorGreen;
+                        text-decoration: none;
+                    }
+                    &:last-child{
+                        position: relative;
+
+                        span{
+                            position: absolute;
+                            top: -45%;
+                            left: -20%;
+                            color: $colorWhite;
+                            font-size: 1.72rem;
+                        }
+                    }
+
+                    &:hover{
+                        border-bottom-color: $colorGreen;
+                        cursor: pointer;
+                        a{
+                            color: $colorGreen;
+
+                        }
+                    }
+                }
+            }
+        }
+
+        // language
+        .lang-block{
+            color: $colorGreen;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            .langs{
+                position: relative;
+
+                .lang-toggle{
+                    
+                   
+                    .selected-lang{
+                        // margin-top: 10px;
+                        border: 1px solid $colorGreen;
+                        padding: 0 25px;
+                        padding-left: 0;
+                        border-radius: 20px;
+                        background-color: $colorWhite;
+                        display: flex;
+                        align-items: center;
+                        cursor: pointer;
+                        transition: all 0.5s ease-in-out;
+
+                        .rotateing{
+                            transform: rotate(90deg);
+                        }
+                        
+                        .arrow-lang{
+                            display: inline-block;
+                            position: relative;
+                            width: 35px;
+                            height: 35px;
+                            font-family: monospace;
+                            color: $colorGreen;
+                            border: 1px solid $colorGreen;
+                            border-radius: 50%;
+                            background-color: $colorWhite;
+                            margin-right: 1rem;
+                            transition: all 0.5s ease-in-out;
+
+            
+                            &::after{
+                                content: "\203A";
+                                width: 100%;
+                                height: 100%;
+                                position: absolute;
+                                top: -7%;
+                                left: 5%;
+            
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                
+                                color: $colorGreen;
+                                font-size: 2.5rem;
+                                font-weight: bold;
+                            }
+                        }
+                    } 
+                    .rounded-bottom-0{
+                        border-radius: 20px 20px 0 0;
+                    }
+                }
+
+                .lang-list{
+                    display: none;
+                    position: absolute;
+                    width: 100%;
+                    background-color: $colorGrey;
+                    border-radius: 0 0 20px 20px;
+                    border: 1px solid $colorGreen;
+                    border-top: none;
+                    cursor: pointer;
+                    animation: lang-animation 0.5s alternate;
+
+                    #lang-uz{
+                        padding: 0.45rem 0;
+                        padding-left: 2rem;
+                        // padding-right: 2rem;
+                        border-bottom: 1px solid;
+                    }
+                    #lang-ru{
+                        padding: 0.45rem 0;
+                        padding-left: 2rem;
+                        // padding-right: 2rem;
+                        border-radius: 0 0 20px 20px;
+                        
+                    }
+
+                    div:hover{
+                        background-color: $colorWhite;
+                    }
+
+                }
+            }
+
+        }
+
+    }
+    // todo: /Header section
+
+
+    //todo: CV section
+    .cv-body{
+        background: linear-gradient(90deg,  $colorDark 50%, $colorWhite 50%);
+        font-family: ComfortaMedium;
+        margin-top: 7rem;
+        min-height: 1600px;
+
+        // subtitle an white line in Personal skills and About me
+        @mixin subtitle($color,$width) {
+            position: relative;
+            font-family: RobotoBold;
+            font-size: 2rem;
+            text-transform: uppercase;
+            color: $color;
+            
+            .small-white-line{
+                position: absolute;
+                left: 0;
+                top: 100%;
+                width: $width;
+                height: 10px;
+                background-color: $color;
+            }
+        }
+        .sub-title{
+           @include subtitle($colorWhite, 90px);
+        }
+        .sub-title-about{
+            @include subtitle($colorDark, 60px);
+
+        }
+        
+        // !------------------------------------------------------------------------------------
+
+        //? left side of CV
+        .cv-left-side{
+            color: $colorWhite;
+            background-image: url('../images/backy.svg');
+            background-repeat: no-repeat;
+            background-size: 100%;
+            border: 1px solid $colorWhite;            
+
+            .short-introduce{
+                font-family: RobotoBold;
+                font-size: 4rem;
+                margin-left: 4rem;
+                margin-top: 2rem;
+                letter-spacing: 0.35rem;
+
+                // first name and last name
+                .full-name{
+                    line-height: 4.5rem;
+
+                    .first-name{
+                        font-size: 3rem;
+                        
+                    }
+                    .last-name{
+                        font-size: 3.7rem;
+                        
+                    }
+                }
+
+                // job title
+                .job{
+                    font-size: 1.1rem;
+                    margin-top: 0.2rem;
+                    margin-left: 4rem;
+                    font-style: italic;
+                }
+            }
+             // rounded image
+            .my-image {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 7rem;
+                img{
+                    width: 60%;
+                    border: 12px solid $colorGreen;
+                    box-shadow: 0 0 2px $colorWhite;
+                }
+            }
+
+            // my image
+            .personal-skills{
+                margin-top: 4rem;
+                margin-left: 4rem;
+
+                .skills{
+                    margin-right: 15%;
+                    margin-top: 3rem;
+
+                    // define which skill progress in How much percent % relate to progress maker
+                    @mixin progressMaker($widthProgress) {
+                        font-size: 1.25rem;
+                        margin-bottom: 1rem;
+                        .progress-line{
+                            display: inline-block;
+                            position: relative;
+                            width: 45%;
+                            height: 15px;
+                            margin-left: 1rem;
+                            border: 2px solid $colorWhite;
+                            border-radius: 10px;
+                            
+
+                            &::before{
+                                content: "";
+                                position: absolute;
+                                top: -10%;
+                                left: -1%;
+                                width: $widthProgress;
+                                height: 14px;
+                                border: 2px solid $colorWhite;
+                                @if $widthProgress == 102%{
+                                    border-radius: 10px;
+                                }
+                                @else{ border-radius: 10px 0 0 10px;}
+                                background-color: $colorWhite;
+                                vertical-align: 10px;
+                            }
+                        }
+
+                    
+                    }
+
+                    // skill 85%
+                    .skill{
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        @include progressMaker(85%)
+                    }
+                    // skill 100%
+                    .skill-1{
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        @include progressMaker(102%)
+                    }
+                }
+            }
+
+            // my Contacts
+            .contacts{
+                margin-top: 8rem;
+                padding-top: 1rem;
+                margin-bottom: 2rem;
+
+                .contact{
+                    margin-bottom: 1rem;
+
+                    .contact-infos{
+                        margin-left: 4rem;
+                        margin-right: 15%;
+
+                        .social-img{
+                            padding: 0;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            img{
+                                width: 60%;
+                            } 
+                        }
+                        
+                        .social-contact{
+                            line-height: 1.5rem;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+
+                            .socials-name{
+                                font-family: ComfortaBold;
+                                font-size: 1.25rem;
+                                
+                            }
+                            .my-social{
+                                letter-spacing: 0.1rem;
+                            }
+                        }                
+
+                    }
+                }
+            }
+        }
+
+        // !------------------------------------------------------------------------------------
+
+        //? right side of CV
+        .cv-right-side{
+            border: 1px solid $colorGreen;
+            border-left: none;  
+            color: $colorDark;
+
+            // ---------------------------------------------------------------------------------------------------
+            // About-me section
+            .about-me{
+                margin: 2rem 1rem 0 1rem;    
+                padding-bottom: 1rem;
+                border-bottom: 1px solid;
+
+                p{
+                    margin-top: 2rem;
+                    font-family: ComfortaRegular;
+                    font-style: italic;
+                    box-sizing: border-box;
+                    margin-bottom: 0.4rem;
+                    text-align: justify;
+                    span{
+                        background-color: $colorGreen;
+                        color: $colorWhite;
+                        padding: 0.24rem 0.63rem;
+                        margin-left: 0.4rem;
+                    }
+                    div{
+                        padding: 0;
+                        margin: 0;
+                    }
+                    & + div{
+                        color: $colorGreen;
+                    }
+                }
+
+                .techno-info{
+                    margin: 0 0.75rem 0.3rem 0.1rem;
+                    box-shadow: 0 0 10px #797979;
+                    
+                    // scrollbar for my known techs
+                    ::-webkit-scrollbar{
+                        width: 5px!important;
+                    }
+                    ::-webkit-scrollbar-thumb{
+                        background-color: $colorGreen;
+                        border-radius: 50px;
+                    }
+                    ::-webkit-scrollbar-track{
+                        background-color: $colorWhite;
+                      
+                    }
+                    .technologies{
+                        height: 130px;
+                        padding: 0;
+                        border: 1px solid $colorGreen;
+                        overflow: auto;
+                        font-family: ComfortaBold;   
+
+                        .techy{
+                            padding: 2px;
+                            padding-left: 0.75rem;
+                            // margin-bottom: 4px;
+                            border-bottom: 1px solid;
+                            cursor: pointer;
+                        }
+                        .active-tech{
+                            background-color: $colorDark;
+                            color: $colorWhite;
+                        }
+                    }
+
+                    .techy-description{
+                        font-family: monospace;
+                        font-style: italic;
+                        padding: 5px;
+                        border: 1px solid $colorGreen;
+                        height: 130px;
+                        cursor: pointer;
+                        overflow: auto;
+
+                        div{ 
+                            display: inline-block; 
+                            margin: 0;
+
+                            div{
+                                margin-bottom: 0.2rem;
+                                margin-right: 0.2rem;
+                                padding:  1px 5px;
+                                padding-left: 4px;
+                                background-color: $colorDark;
+                                color: $colorWhite;
+                                text-transform: uppercase;
+                                font-weight: bold;
+                                // border-radius: 5px;
+
+
+                                .white-circle{
+                                    display: inline-block;
+                                    position: relative;
+                                    width: 15px;
+                                    height: 15px;
+                                    border-radius: 50%;
+                                    background-color: $colorGreen;
+                                    color: $colorWhite;
+                                    font-weight: bold;
+                                    margin-right: 0.5rem;
+                                    vertical-align: middle;
+
+                                    &::before{
+                                        content: "\2713";
+                                        position: absolute;
+                                        left: 50%;
+                                        top: -50%;
+                                        transform: translate(-50%, 0%);
+                                    }
+                                }
+                            }
+                           
+                        }
+                        
+                    }
+                }
+            }
+
+            // ----------------------------------------------------------------------------------------------------
+            // Experience Sector and education sector
+            .experiences-sector, .education-sector{
+                position: relative;
+                margin: 1rem 1rem 0 1rem;
+                height: 440px;
+                border-bottom: 1px solid;
+
+                // position-absolute title and plus icon
+                .title-experience{
+                    position: absolute;
+                    top: 42%;
+                    left: -35%;
+                    text-transform: uppercase;
+                    font-family: RobotoBold;
+                    font-size: 2rem;
+                    letter-spacing: 0.2rem;
+                    color: $colorWhite;
+
+                    display: flex;
+                    align-items: center;
+                    transform: rotate(-90deg);
+
+                    img{
+                        width: 30px;
+                        padding-bottom: 8px;
+                        margin-right: 10px;
+                        // vertical-align: -100px;
+                    }
+                }
+
+                .openclose-icon img{
+                    width: 40px;
+                    position: absolute;
+                    right: -2%;
+                    top: -7.5%;
+                    cursor: pointer;
+                }
+                 // position-absolute title and plus icon
+
+
+                // Experence infos where when work
+                .experiences-infos{
+
+                    padding-top: 1rem;
+
+                    // When and where did work
+                    .workplace-time{
+                        border-right: 1px solid $colorGreen;
+
+                        &:first-child{
+                            padding-bottom: 5.5rem;
+                        }
+                        &:last-child{
+                            padding-bottom: 6rem;
+                        }
+                        .workplace{
+                            font-family: RobotoBold;
+                            font-size: 1.2rem;
+                            letter-spacing: 0.1rem;
+                        }
+                        .work-time{
+                            font-family:Georgia, 'Times New Roman', Times, serif; 
+                        }
+                    }
+
+                    // What did do? and logo-brand
+                    .place-descriptions{
+
+                        .place-description{
+                            &:first-child{
+                                border-bottom: 1px solid $colorGreen;
+                                margin-bottom: 1.5rem;
+                                padding-bottom: 0.5rem;
+                            }
+                            
+                            // logo-brand
+                            .place{
+                                display: flex;
+                                align-items: center;
+
+                                .workplace-logo img{
+                                    width: 50px;
+                                }
+
+                                .workplace-brandname{
+                                    font-family: RobotoBold;
+                                    margin-left: 0.75rem;
+                                    line-height: 1.2rem;
+                                    letter-spacing: 0.1rem;
+                                }
+                            }
+
+                            // What did do?
+                            .about-work{
+                                margin-top: 1rem;
+                                text-align: justify;
+                                line-height: 1.2rem;
+                            }
+                        }
+                    }
+                    
+                }
+               
+            }
+
+            // ---------------------------------------------------------------------------------------------------
+            // gitHub logo
+            .gihb-logo{
+                margin-top: 6rem;
+                margin-left: 2rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .logo-git{
+
+                    img{
+                        width: 90%;
+                        
+                    }
+                    border-right: 1px solid $colorDark;
+                }
+
+                .name-silka{
+                    color: $colorGreen;
+                    .name-git{
+                        font-family: ComfortaBold;
+                        font-size: 1.75rem;
+                    }
+                    a{
+                        text-decoration: none;
+                        color: $colorGreen;
+                       
+                    }
+                }
+                
+            }
+        }
+
+        // !------------------------------------------------------------------------------------
+
+    }
+    //todo: CV section
+
+
+    // todo: page up
+    #page-up{
+        display: none;
+
+        .page-up{
+            position: fixed;
+            width: 45px;
+            height: 45px;
+            top: 85%;
+            left: 94%;
+            background-color: $colorGreen;
+            opacity: 0.75;
+            text-decoration: none;
+            color: white;
+            transition: all 0.4s;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &::before{
+                content: "";
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 0 15px 25px 15px;
+                border-color: transparent transparent $colorWhite transparent;
+            }
+
+            &:hover{
+                opacity: 1;
+            }
+        }
+    }
+    
+}
+
+
+
+
+
+

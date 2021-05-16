@@ -1,0 +1,233 @@
+@font-face {
+  font-family: RobotoBold;
+  src: url("../fonts/Roboto-Bold.ttf");
+  font-weight: 900; }
+@font-face {
+  font-family: ComfortaBold;
+  src: url("../fonts/Comfortaa-Bold.ttf");
+  font-weight: 700; }
+@font-face {
+  font-family: ComfortaMedium;
+  src: url("../fonts/Comfortaa-Medium.ttf");
+  font-weight: 500; }
+@font-face {
+  font-family: ComfortaRegular;
+  src: url("../fonts/Comfortaa-Regular.ttf");
+  font-weight: 400; }
+@keyframes lang-animation {
+  from {
+    top: 150%; }
+  to {
+    top: 100%; } }
+html {
+  scroll-behavior: smooth; }
+
+/* SCROLLBAR for window*/
+::-webkit-scrollbar {
+  width: 9px !important; }
+
+::-webkit-scrollbar-thumb {
+  background-color: #0FBE43;
+  border-radius: 50px; }
+
+::-webkit-scrollbar-track {
+  background-color: #242A42; }
+
+body {
+  background: linear-gradient(90deg, #242A42 50%, transparent 50%);
+  position: relative; }
+  body header {
+    font-family: ComfortaBold;
+    background: linear-gradient(90deg, #fff 50%, #242A42 50%);
+    border: 1px solid #0FBE43;
+    border-top: none;
+    border-radius: 0 0 30px 0; }
+    body header .site-logo {
+      padding: 0; }
+      body header .site-logo a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5px 0;
+        border-right: 1px dotted #0FBE43; }
+        body header .site-logo a img {
+          width: 70%; }
+    body header .main-navbar {
+      height: 100%;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      body header .main-navbar .main-navbar__items {
+        width: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: space-between;
+        list-style: none;
+        color: #0FBE43; }
+        body header .main-navbar .main-navbar__items .main-navbar__item {
+          border-bottom: 2px solid transparent;
+          transition: all 0.4s ease-in-out; }
+          body header .main-navbar .main-navbar__items .main-navbar__item a {
+            color: #0FBE43;
+            text-decoration: none; }
+          body header .main-navbar .main-navbar__items .main-navbar__item:last-child {
+            position: relative;
+            border: none;
+            background-color: #0FBE43;
+            padding: 5px 10px; }
+            body header .main-navbar .main-navbar__items .main-navbar__item:last-child span {
+              position: absolute;
+              top: -15%;
+              left: -20%;
+              color: #fff;
+              font-size: 1.72rem; }
+          body header .main-navbar .main-navbar__items .main-navbar__item:hover {
+            border-bottom-color: #0FBE43;
+            cursor: pointer; }
+            body header .main-navbar .main-navbar__items .main-navbar__item:hover a {
+              color: #0FBE43; }
+    body header .lang-block {
+      color: #0FBE43;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      body header .lang-block .langs {
+        position: relative; }
+        body header .lang-block .langs .lang-toggle .selected-lang {
+          border: 1px solid #0FBE43;
+          padding: 0 25px;
+          padding-left: 0;
+          border-radius: 20px;
+          background-color: #fff;
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+          transition: all 0.5s ease-in-out; }
+          body header .lang-block .langs .lang-toggle .selected-lang .rotateing {
+            transform: rotate(90deg); }
+          body header .lang-block .langs .lang-toggle .selected-lang .arrow-lang {
+            display: inline-block;
+            position: relative;
+            width: 35px;
+            height: 35px;
+            font-family: monospace;
+            color: #0FBE43;
+            border: 1px solid #0FBE43;
+            border-radius: 50%;
+            background-color: #fff;
+            margin-right: 1rem;
+            transition: all 0.5s ease-in-out; }
+            body header .lang-block .langs .lang-toggle .selected-lang .arrow-lang::after {
+              content: "\203A";
+              width: 100%;
+              height: 100%;
+              position: absolute;
+              top: -7%;
+              left: 5%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              color: #0FBE43;
+              font-size: 2.5rem;
+              font-weight: bold; }
+        body header .lang-block .langs .lang-toggle .rounded-bottom-0 {
+          border-radius: 20px 20px 0 0; }
+        body header .lang-block .langs .lang-list {
+          display: none;
+          position: absolute;
+          width: 100%;
+          background-color: #f8f7f7;
+          border-radius: 0 0 20px 20px;
+          border: 1px solid #0FBE43;
+          border-top: none;
+          cursor: pointer;
+          animation: lang-animation 0.5s alternate; }
+          body header .lang-block .langs .lang-list #lang-uz {
+            padding: 0.45rem 0;
+            padding-left: 2rem;
+            border-bottom: 1px solid; }
+          body header .lang-block .langs .lang-list #lang-ru {
+            padding: 0.45rem 0;
+            padding-left: 2rem;
+            border-radius: 0 0 20px 20px; }
+          body header .lang-block .langs .lang-list div:hover {
+            background-color: #fff; }
+  body .form {
+    background-color: #fff;
+    border: 1px solid #0FBE43;
+    width: 35%;
+    margin: 0 auto;
+    margin-top: 10%;
+    border-radius: 10px;
+    overflow: hidden; }
+    body .form .form-type {
+      background-color: #0FBE43;
+      color: #fff;
+      padding: 20px 0;
+      font-family: RobotoBold;
+      font-size: 2rem; }
+    body .form form {
+      padding: 30px; }
+      body .form form input[type="email"], body .form form input[type="password"], body .form form input[type="text"] {
+        width: 100%;
+        border: 1px solid #0FBE43;
+        border-left: none;
+        border-radius: 0 5px 5px 0;
+        color: #242A42; }
+        body .form form input[type="email"]:focus, body .form form input[type="password"]:focus, body .form form input[type="text"]:focus {
+          outline: none;
+          border: 1px solid #242A42;
+          border-left: none; }
+      body .form form .emails, body .form form .passwords {
+        display: flex;
+        margin-bottom: 1rem; }
+        body .form form .emails label, body .form form .passwords label {
+          background-color: #0FBE43;
+          border-radius: 5px 0 0 5px; }
+          body .form form .emails label img, body .form form .passwords label img {
+            width: 40px;
+            height: 40px;
+            padding: 5px;
+            filter: invert(100%); }
+      body .form form .passwords img {
+        right: 5px;
+        top: 15%;
+        cursor: pointer; }
+      body .form form .invent {
+        text-align: center;
+        font-style: italic;
+        margin-top: 1rem; }
+        body .form form .invent .tosign {
+          font-weight: bold;
+          color: #0FBE43;
+          cursor: pointer; }
+      body .form form button {
+        width: 100%;
+        background-color: #0FBE43;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 1.25rem;
+        padding: 7px 0; }
+    body .form .signup input[type="email"], body .form .signup input[type="password"], body .form .signup input[type="text"] {
+      border-left: 1px solid #0FBE43;
+      padding: 5px 15px;
+      border-radius: 5px;
+      margin-bottom: 1rem; }
+      body .form .signup input[type="email"]:focus, body .form .signup input[type="password"]:focus, body .form .signup input[type="text"]:focus {
+        outline: none;
+        border: 1px solid #242A42; }
+    body .form .signup .name {
+      display: flex; }
+      body .form .signup .name #firstName {
+        margin-right: 1rem; }
+    body .form .signup .passwords-s {
+      display: flex; }
+      body .form .signup .passwords-s #eye-s, body .form .signup .passwords-s #eye-sconfpass {
+        left: -30px;
+        top: 5px;
+        cursor: pointer; }
+
+/*# sourceMappingURL=registration.css.map */

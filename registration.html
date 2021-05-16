@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="CV project, Portfolio, Curriculum Vitae, personal, blog, web site, Umrbek, web developer, portfolio web sayti, shaxsiy sayt, rezyume, front-end developer, dasturchi">
+    <meta name="author" content="Umrbek Xudayorovich Tajimuratov">
+    <meta name="description" content="Bu sayt Frond-end developer tomonidan Portfolio tariqasida yangicha yondashuvda ishlab chiqildi!">
+    <link rel="icon" type="image/png" href="./images/logo.png">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/registration.css">
+    <title>Umrbek Tajimuratov | Personal Blog</title>
+</head>
+<body>
+
+    <div class="container">
+        <!-- todo: Header section -->
+        <header class="row" id="header">
+            <!-- logo -->
+            <div class="col-md-1 site-logo">
+                <a href="index.html"><img src="./images/logo1.png" alt="My logo"></a>
+            </div>
+            <!-- menu -->
+            <div class="col-md-9">
+                <nav class="main-navbar">
+                    <ul class="main-navbar__items">
+                        <li class="main-navbar__item">
+                            My Projects
+                        </li>
+                        <li class="main-navbar__item">
+                            Style Switcher
+                        </li>
+                        <li class="main-navbar__item">
+                            Body Skin
+                        </li>
+                        <li class="main-navbar__item"><span>&#187;</span>
+                            <a href="#" style="color: white;">Registration</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- language -->
+            <div class="col-md-2  lang-block">
+                <div class="langs">
+                    <div class="lang-toggle">
+                        <div class="selected-lang"><span class="arrow-lang"></span><span id="lang-en">English</span></div>
+                    </div>
+                    <div class="lang-list">
+                        <div id="lang-uz">O'zbekcha</div>
+                        <div id="lang-ru">Русский</div>
+                    </div>
+                </div>
+                
+            </div>
+            
+        </header>
+        <!-- todo: Header section -->
+
+    </div>
+
+    <div class="container">
+        <div class="form" id="form">
+            <div class="form-type text-center">Log In Form</div>
+            <form action="#" method="GET">
+                
+                <div class="emails">
+                    <label for="email-r"><img src="./images/avatar-user-with-suit_icon.svg" alt="User icon"></label>
+                    <input type="email" name="email" id="email-r" placeholder="Email">
+                </div>
+
+                <div class="passwords">
+                    <label for="password-r"><img src="./images/lock-padlock.svg" alt="Lock icon"></label>
+                    <input type="password" name="password" id="password-r" placeholder="Password">
+                    <div class="position-relative">
+                        <img src="./images/visible-interface.svg" width="25px" class="position-absolute" id="eye" onclick="login()">
+                    </div>
+                    
+                </div>
+
+                <button type="submit" id="submit-log">Login</button>
+
+                <div class="invent ">
+                    Not a member? <span class="tosign" id="tosign">Sign Up now</span>
+                </div>
+
+            </form>
+        </div>
+        
+    </div>
+
+
+
+    
+    
+
+    <div id="page-up"><a href="#header" class="page-up"></a> </div>
+
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/jQuery.min.js"></script>
+    <script src="./js/scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,371 @@
+// colors
+$colorDark: #242A42;
+$colorWhite: #fff;
+$colorGreen: #0FBE43;
+$colorGrey: #f8f7f7;
+
+// fonts
+@font-face {
+    font-family: RobotoBold;
+    src: url("../fonts/Roboto-Bold.ttf");
+    font-weight: 900;
+}
+@font-face {
+    font-family: ComfortaBold;
+    src: url("../fonts/Comfortaa-Bold.ttf");
+    font-weight: 700;
+}
+@font-face {
+    font-family: ComfortaMedium;
+    src: url("../fonts/Comfortaa-Medium.ttf");
+    font-weight: 500;
+}
+@font-face {
+    font-family: ComfortaRegular;
+    src: url("../fonts/Comfortaa-Regular.ttf");
+    font-weight: 400;
+}
+
+@keyframes lang-animation {
+    from {
+        top: 150%;
+    }
+    to {
+        top: 100%;
+    }
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+/* SCROLLBAR for window*/
+::-webkit-scrollbar{
+    width: 9px!important;
+}
+::-webkit-scrollbar-thumb{
+    background-color: $colorGreen;
+    border-radius: 50px;
+}
+::-webkit-scrollbar-track{
+    background-color: $colorDark;
+  
+}
+
+
+body{
+    background: linear-gradient(90deg, $colorDark 50%, transparent 50%);
+    position: relative;
+  
+
+    // todo: Header section
+    header{
+        font-family: ComfortaBold;
+        background: linear-gradient(90deg, $colorWhite 50%, $colorDark 50%);
+        border: 1px solid $colorGreen;
+        border-top: none;
+        border-radius: 0 0 30px 0;
+        
+
+        // logo
+        .site-logo {
+            padding: 0;
+            a{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5px 0;
+            border-right: 1px dotted $colorGreen;
+
+            img{
+                width: 70%;
+            }
+        }}
+
+        // menu
+        .main-navbar{
+            height: 100%;
+            // border: 1px solid;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .main-navbar__items{
+                width: 100%;
+                // border: 1px solid;
+                margin: 0;
+                display: flex;
+                justify-content: space-between;
+                list-style: none;
+                color: $colorGreen;
+
+                .main-navbar__item {
+                    border-bottom: 2px solid transparent;
+                    transition: all 0.4s ease-in-out;
+
+                    a{
+                        color: $colorGreen;
+                        text-decoration: none;
+                    }
+                    &:last-child{
+                        position: relative;
+                        border: none;
+                        background-color: $colorGreen;
+                        padding: 5px 10px;
+                        
+
+                        span{
+                            position: absolute;
+                            top: -15%;
+                            left: -20%;
+                            color: $colorWhite;
+                            font-size: 1.72rem;
+                        }
+                    }
+
+                    &:hover{
+                        border-bottom-color: $colorGreen;
+                        cursor: pointer;
+                        a{
+                            color: $colorGreen;
+
+                        }
+                    }
+                }
+            }
+        }
+
+        // language
+        .lang-block{
+            color: $colorGreen;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            .langs{
+                position: relative;
+
+                .lang-toggle{
+                    
+                   
+                    .selected-lang{
+                        // margin-top: 10px;
+                        border: 1px solid $colorGreen;
+                        padding: 0 25px;
+                        padding-left: 0;
+                        border-radius: 20px;
+                        background-color: $colorWhite;
+                        display: flex;
+                        align-items: center;
+                        cursor: pointer;
+                        transition: all 0.5s ease-in-out;
+
+                        .rotateing{
+                            transform: rotate(90deg);
+                        }
+                        
+                        .arrow-lang{
+                            display: inline-block;
+                            position: relative;
+                            width: 35px;
+                            height: 35px;
+                            font-family: monospace;
+                            color: $colorGreen;
+                            border: 1px solid $colorGreen;
+                            border-radius: 50%;
+                            background-color: $colorWhite;
+                            margin-right: 1rem;
+                            transition: all 0.5s ease-in-out;
+
+            
+                            &::after{
+                                content: "\203A";
+                                width: 100%;
+                                height: 100%;
+                                position: absolute;
+                                top: -7%;
+                                left: 5%;
+            
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                
+                                color: $colorGreen;
+                                font-size: 2.5rem;
+                                font-weight: bold;
+                            }
+                        }
+                    } 
+                    .rounded-bottom-0{
+                        border-radius: 20px 20px 0 0;
+                    }
+                }
+
+                .lang-list{
+                    display: none;
+                    position: absolute;
+                    width: 100%;
+                    background-color: $colorGrey;
+                    border-radius: 0 0 20px 20px;
+                    border: 1px solid $colorGreen;
+                    border-top: none;
+                    cursor: pointer;
+                    animation: lang-animation 0.5s alternate;
+
+                    #lang-uz{
+                        padding: 0.45rem 0;
+                        padding-left: 2rem;
+                        // padding-right: 2rem;
+                        border-bottom: 1px solid;
+                    }
+                    #lang-ru{
+                        padding: 0.45rem 0;
+                        padding-left: 2rem;
+                        // padding-right: 2rem;
+                        border-radius: 0 0 20px 20px;
+                        
+                    }
+
+                    div:hover{
+                        background-color: $colorWhite;
+                    }
+
+                }
+            }
+
+        }
+
+    }
+    // todo: /Header section
+
+
+    // todo: Registration form
+    .form{
+        background-color: $colorWhite;
+        border: 1px solid $colorGreen;
+        width: 35%;
+        margin: 0 auto;
+        margin-top: 10%;
+        border-radius: 10px;
+        overflow: hidden;
+        
+        .form-type{
+            background-color: $colorGreen;
+            color: $colorWhite;
+            padding: 20px 0;
+            font:{
+                family: RobotoBold;
+                size: 2rem;
+            }
+            
+        }
+
+        form{
+            padding: 30px;
+
+            input[type="email"],input[type="password"],input[type="text"]{
+                width: 100%;
+                border: 1px solid $colorGreen;
+                border-left: none;
+                border-radius: 0 5px 5px 0;
+                color: $colorDark;
+
+                &:focus{
+                    outline: none;
+                    border: 1px solid $colorDark;
+                    border-left: none;
+                }
+               
+            }
+
+            
+
+            .emails, .passwords{
+                display: flex;
+                margin-bottom: 1rem;
+
+                label{
+                    background-color: $colorGreen;
+                    border-radius: 5px 0 0 5px;
+                    
+                    img{
+                        width: 40px;
+                        height: 40px;
+                        padding: 5px;
+                        filter: invert(100%);
+                    }
+                }
+            }
+
+            .passwords{
+                
+                img{
+                   right: 5px;
+                   top: 15%;
+                   cursor: pointer;
+                }
+            }
+
+            .invent{
+                text-align: center;
+                font-style: italic;
+                margin-top: 1rem;
+
+                .tosign{
+                    font-weight: bold;
+                    color: $colorGreen;
+                    cursor: pointer;
+                }
+            }
+
+            button{
+                width: 100%;
+                background-color: $colorGreen;
+                color: $colorWhite;
+                border: none;
+                border-radius: 5px;
+                font-size: 1.25rem;
+                padding: 7px 0;
+            }
+        }
+
+        .signup{
+            input[type="email"],input[type="password"],input[type="text"]{
+                border-left: 1px solid $colorGreen;
+                padding: 5px 15px;
+                border-radius: 5px;
+                margin-bottom: 1rem;
+
+                &:focus{
+                    outline: none;
+                    border: 1px solid $colorDark;
+                   
+                }
+            }
+            .name{
+                display: flex;
+                
+                #firstName{
+                    margin-right: 1rem;
+                }
+
+               
+            }
+            .passwords-s{
+                display: flex;
+
+                #eye-s,#eye-sconfpass{
+                    left: -30px;
+                    top: 5px;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        
+    }
+    // todo: /Registration form
+
+}
